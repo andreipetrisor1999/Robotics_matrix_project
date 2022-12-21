@@ -726,7 +726,7 @@ void Update(){
   //Check If The Snake hits itself
    for(int j=0;j<snake.len;j++){
     if(snake.body[j][0] == newHead[0] && snake.body[j][1] == newHead[1]){
-      //Pause the game for 1 sec then Reset it
+      //Pause the game for 2 sec then go to main menu
       if(soundIsOn) tone(buzzerPin, gameOverTone, 2000);
       delay(2000);
       moveMainMenu(0);
