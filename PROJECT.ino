@@ -2,7 +2,7 @@
 #include "LedControl.h"
 #define MAIN_MENU_SIZE 5
 #define HIGHSCORE_MENU_SIZE 5
-#define ABOUT_MENU_SIZE 12
+#define ABOUT_MENU_SIZE 8
 #define HOW_TO_PLAY_MENU_SIZE 8
 #define SETTINGS_MENU_SIZE 6 
 #define SETTINGS_OPTIONS_MENU_SIZE 2
@@ -74,7 +74,7 @@ int highestScore = 0;
 
 String mainMenuItems[MAIN_MENU_SIZE] = {" Start Game", " High Scores ", " Settings", " About", " How to play"};
 String highScoresMenuItems[HIGHSCORE_MENU_SIZE];
-String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE SNAKE GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI", "  Github Link:", "andreipetrisor1", "999/Robotics_ma","trix_project"};
+String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE SNAKE GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI"};
 String howToPlayMenuItems[HOW_TO_PLAY_MENU_SIZE] = {"  Use the joy", "  to move the", " snake around", "  the field.", "  Collect the", "   apples to", " increase your", "    score!"};
 String settingsMenuItems[SETTINGS_MENU_SIZE] = {" Player name", " Difficulty" , " LCD brightness", " Game brightness", " Sound", " Save & exit"};
 
