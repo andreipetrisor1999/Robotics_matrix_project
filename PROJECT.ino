@@ -2,9 +2,9 @@
 #include "LedControl.h"
 #define MAIN_MENU_SIZE 5
 #define HIGHSCORE_MENU_SIZE 5
-#define ABOUT_MENU_SIZE 8
+#define ABOUT_MENU_SIZE 12
 #define HOW_TO_PLAY_MENU_SIZE 8
-#define SETTINGS_MENU_SIZE 6
+#define SETTINGS_MENU_SIZE 6 
 #define SETTINGS_OPTIONS_MENU_SIZE 2
 #define EASY 1200
 #define MEDIUM 800
@@ -74,7 +74,7 @@ int highestScore = 0;
 
 String mainMenuItems[MAIN_MENU_SIZE] = {" Start Game", " High Scores ", " Settings", " About", " How to play"};
 String highScoresMenuItems[HIGHSCORE_MENU_SIZE];
-String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE SNAKE GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI"};
+String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE SNAKE GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI", "  Github Link:", "andreipetrisor1", "999/Robotics_ma","trix_project"};
 String howToPlayMenuItems[HOW_TO_PLAY_MENU_SIZE] = {"  Use the joy", "  to move the", " snake around", "  the field.", "  Collect the", "   apples to", " increase your", "    score!"};
 String settingsMenuItems[SETTINGS_MENU_SIZE] = {" Player name", " Difficulty" , " LCD brightness", " Game brightness", " Sound", " Save & exit"};
 
@@ -122,7 +122,7 @@ struct Apple{
 };
 
 byte pic[matrixSize] = {0,0,0,0,0,0,0,0};
-Snake snake = {{1,5},{{0,5}, {1,5}}, 2, {1,0}};//Initialize a snake object
+Snake snake = {{1,7},{{0,7}, {1,7}}, 2, {1,0}};//Initialize a snake object
 Apple apple = {(int)random(0,8),(int)random(0,8)};//Initialize an apple object
 
 //Variables To Handle The Game Time
@@ -361,8 +361,8 @@ void readAxisAndButton(enum menuTypes menuType, int menuSize){
         if(currentPlayerName[letterPosition] != alphabet[0]){
           letterPosition ++;
           alphabetPosition = alphabet.indexOf(currentPlayerName[letterPosition]);
-          if(letterPosition > 15) {
-            letterPosition = 15;
+          if(letterPosition > 12) {
+            letterPosition = 12;
             noTone(buzzerPin);
           }
           changePlayerName(letterPosition, alphabetPosition);          
@@ -597,7 +597,7 @@ void readAxisAndButton(enum menuTypes menuType, int menuSize){
             lcd.print("Brightness level");
             lcd.setCursor(0, 1);
             String brightnessMenuItem = "      <" + String(matrixBrightness) + ">";
-            lcd.print(brightnessMenuItem);
+            lcd.print("      <" + String(matrixBrightness) + ">");
           break;          
         }        
       }       
@@ -726,7 +726,7 @@ void Update(){
   //Check If The Snake hits itself
    for(int j=0;j<snake.len;j++){
     if(snake.body[j][0] == newHead[0] && snake.body[j][1] == newHead[1]){
-      //Pause the game for 2 sec then go to main menu
+      //Pause the game for 1 sec then go to main menu
       if(soundIsOn) tone(buzzerPin, gameOverTone, 2000);
       delay(2000);
       moveMainMenu(0);
