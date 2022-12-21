@@ -74,7 +74,7 @@ int highestScore = 0;
 
 String mainMenuItems[MAIN_MENU_SIZE] = {" Start Game", " High Scores ", " Settings", " About", " How to play"};
 String highScoresMenuItems[HIGHSCORE_MENU_SIZE];
-String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE COOL GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI"};
+String aboutMenuItems[ABOUT_MENU_SIZE] = {" THE SNAKE GAME", "This is a small", " project that", "is intended to", "  entertain", "   anyone.", "  CREATED BY", "PETRISOR ANDREI"};
 String howToPlayMenuItems[HOW_TO_PLAY_MENU_SIZE] = {"  Use the joy", "  to move the", " snake around", "  the field.", "  Collect the", "   apples to", " increase your", "    score!"};
 String settingsMenuItems[SETTINGS_MENU_SIZE] = {" Player name", " Difficulty" , " LCD brightness", " Game brightness", " Sound", " Save & exit"};
 
@@ -154,7 +154,7 @@ void loop() {
   Serial.print('\n');
   if(millis() < 1000){
     lcd.setCursor(0, 0);
-    lcd.print(" THE COOL GAME ");
+    lcd.print(" THE SNAKE GAME ");
     lcd.setCursor(0, 1);
     lcd.print(" welcome player ");
   }else {
